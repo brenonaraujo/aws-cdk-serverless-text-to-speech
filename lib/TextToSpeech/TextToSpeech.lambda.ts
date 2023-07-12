@@ -51,7 +51,7 @@ exports.handler = async (event: SQSEvent) => {
                 TableName: metadataTableName,
                 Item: {
                     'uuid': uuid,
-                    'submissionTime': textObject.LastModified,
+                    'submissionTime': textObject.LastModified?.toISOString(),
                     'textKey': textKey,
                     'audioKey': audioKey,
                     'characters': pollyResponse.RequestCharacters,
