@@ -58,6 +58,8 @@ exports.handler = async (event: SQSEvent) => {
                     'status': 'completed'
                 }
             }).promise();
+
+            console.log(`Process ${uuid} synthesized file ${textKey} with ${pollyResponse.RequestCharacters}, saved at: ${audioKey}`)
         }
     }
 
