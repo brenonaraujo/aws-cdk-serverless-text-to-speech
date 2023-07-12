@@ -1,14 +1,33 @@
 # Welcome to your CDK TypeScript project
 
-This is a blank project for CDK development with TypeScript.
+his project sets up an AWS infrastructure for a text-to-speech application using the AWS Cloud Development Kit (CDK). The infrastructure includes two S3 buckets for storing text and audio files, a DynamoDB table for storing metadata, an SQS queue for processing, and a Lambda function for handling text submissions and converting text to speech.
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+## Deploying with CDK
 
-## Useful commands
+Before you can deploy this project, you need to have the AWS CDK installed. If you haven't installed it yet, you can do so by running `npm install -g aws-cdk`. You also need to have your AWS credentials set up. You can follow the [AWS CDK Getting Started guide](https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html) for more information.
 
-* `npm run build`   compile typescript to js
-* `npm run watch`   watch for changes and compile
-* `npm run test`    perform the jest unit tests
-* `cdk deploy`      deploy this stack to your default AWS account/region
-* `cdk diff`        compare deployed stack with current state
-* `cdk synth`       emits the synthesized CloudFormation template
+Once you have the AWS CDK installed and your credentials set up, you can deploy the project by following these steps:
+
+- Clone the repository:
+`git clone git@github.com:brenonaraujo/aws-cdk-serverless-text-to-speech.git`
+
+- Navigate to the project directory:
+ `cd aws-cdk-serverless-text-to-speech`
+
+- Install the dependencies:
+ `npm install`
+
+- Compile the TypeScript code:
+ `npm run build`
+
+- Deploy the stack:
+ `cdk deploy`
+
+Please note that the `cdk deploy` command will create real resources in your AWS account and may incur costs if you are out of the free tier period (12 months after account creation).
+
+Once your are done, you can just destroy all the resources created:
+ `cdk destroy`
+
+ This code is part of two blog posts maded on dev.to if you wanna to dive in and get more explanations about this project please check it out:
+ - []()
+ - []()
