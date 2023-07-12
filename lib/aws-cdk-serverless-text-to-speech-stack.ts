@@ -2,9 +2,10 @@ import * as cdk from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 
 import * as s3 from 'aws-cdk-lib/aws-s3';
-import * as s3n from 'aws-cdk-lib/aws-s3-notifications';
 import * as dynamodb from 'aws-cdk-lib/aws-dynamodb';
 import * as sqs from 'aws-cdk-lib/aws-sqs';
+import * as s3n from 'aws-cdk-lib/aws-s3-notifications';
+import { TextToSpeech } from './TextToSpeech/TextToSpeech';
 
 export class AwsCdkServerlessTextToSpeechStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
@@ -33,6 +34,13 @@ export class AwsCdkServerlessTextToSpeechStack extends cdk.Stack {
     });
 
     textBucket.addEventNotification(s3.EventType.OBJECT_CREATED, new s3n.SqsDestination(processingQueue), { prefix: 'upload/' });
+
+    new TextToSpeech(this, 'TextToSpeech', {
+      textBucket: textBucket,
+      audioBucket: audioBucket,
+      metadataTable: metadataTable,
+      processingQueue: processingQueue
+    });
 
   }
 }
