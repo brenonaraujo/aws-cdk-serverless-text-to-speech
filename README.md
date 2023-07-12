@@ -1,6 +1,6 @@
-# Welcome to your CDK TypeScript project
+# Welcome to your CDK TypeScript project - AWS CDK Serverless Text-to-speech pipeline
 
-his project sets up an AWS infrastructure for a text-to-speech application using the AWS Cloud Development Kit (CDK). The infrastructure includes two S3 buckets for storing text and audio files, a DynamoDB table for storing metadata, an SQS queue for processing, and a Lambda function for handling text submissions and converting text to speech.
+This project sets up an AWS infrastructure for a text-to-speech application using the AWS Cloud Development Kit (CDK). The infrastructure includes two S3 buckets for storing text and audio files, a DynamoDB table for storing metadata, an SQS queue for processing, and a Lambda function for handling text submissions and converting text to speech.
 
 ## Deploying with CDK
 
